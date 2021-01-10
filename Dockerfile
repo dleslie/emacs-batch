@@ -1,9 +1,9 @@
 FROM alpine:3.12.3
 
 RUN apk add --no-cache emacs
-RUN mkdir -p ~/.emacs.d
-COPY init.el ~/.emacs.d
+RUN apk add --no-cache git
 
-RUN /usr/bin/emacs --batch -l ~/.emacs.d/init.el --kill
+RUN mkdir -p /usr/share/emacs/site-lisp
+COPY init.el /usr/share/emacs/site-lisp/init.el
 
-CMD /usr/bin/emacs
+CMD /usr/bin/emacs --batch -l /usr/share/emacs/site-lisp/init.el
