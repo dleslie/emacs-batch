@@ -8,6 +8,6 @@ IE, to convert this org file to html:
 docker run --rm --user $(id -u):$(id -g) --name emacs-batch -v `pwd`:/src dleslie/emacs-batch /usr/bin/emacs --batch --eval "(progn (use-package htmlize) (with-temp-buffer (find-file \"readme.org\") (org-html-export-to-html)))"
 #+END_SRC
 
-The environment contains the `straight.el` implementation of `use-package`, and the common set of elpa targets pre-configured to use `HTTPS`.
+The environment contains the =straight.el= implementation of =use-package=, and the common set of elpa targets pre-configured to use =HTTPS=.
 
-It is expected that the working directory is mounted to `/src/`.
+It is expected that the working directory is mounted to =/src/=.
