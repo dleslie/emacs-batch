@@ -1,0 +1,9 @@
+# Emacs Batch
+
+Docker file to run emacs in batch mode.
+
+IE, to convert this org file to html:
+
+#+BEGIN_SRC bash
+docker run --rm --user $(id -u):$(id -g) --name emacs-batch -v `pwd`:/src dleslie/emacs-batch /usr/bin/emacs --batch -l /src/readme.org -f org-html-export-to-html --kill
+#+END_SRC
