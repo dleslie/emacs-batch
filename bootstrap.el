@@ -1,4 +1,4 @@
-;; init.el for dleslie/emacs-batch
+;; site-start.el for dleslie/emacs-batch
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -11,4 +11,6 @@
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+  (load bootstrap-file))
+
+(straight-use-package 'use-package)
