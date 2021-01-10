@@ -5,12 +5,12 @@ Docker file to run emacs in batch mode.
 IE, to convert this org file to html:
 
 #+BEGIN_SRC bash
-docker run --rm \
-	--user $(id -u):$(id -g) \
-	--name emacs-batch \
-	-v `pwd`:/src \
-	dleslie/emacs-batch \
-	/usr/bin/emacs --batch \
+docker run --rm			  \
+	--user $(id -u):$(id -g)  \
+	--name emacs-batch	  \
+	-v `pwd`:/src		  \
+	dleslie/emacs-batch	  \
+	/usr/bin/emacs --batch	  \
 	--eval "(progn (use-package htmlize) (with-temp-buffer (find-file \"readme.org\") (org-html-export-to-html)))"
 #+END_SRC
 
