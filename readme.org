@@ -14,6 +14,12 @@ docker run --rm			  \
 	--eval "(progn (use-package htmlize) (with-temp-buffer (find-file \"readme.org\") (org-html-export-to-html)))"
 #+END_SRC
 
+Alternatively, a shell script has been provided:
+
+#+BEGIN_SRC bash
+./run.sh "(progn (use-package htmlize) (with-temp-buffer (find-file \"readme.org\") (org-html-export-to-html)))"
+#+END_SRC
+
 The environment contains the =straight.el= implementation of =use-package=, and the common set of elpa targets pre-configured to use =HTTPS=.
 
 It is expected that the working directory is mounted to =/src/=.
